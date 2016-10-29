@@ -1,5 +1,5 @@
 //
-//  4-pfister-a1.c
+//  4-pfister-a2.c
 //
 //  Created by Clemens Pfister on 27/10/2016.
 //
