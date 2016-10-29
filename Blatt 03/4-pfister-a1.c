@@ -15,31 +15,40 @@
 
 int main(void){
     
+    /* Value of n */
     int n = 10;
     scanf("%d", &n);
+
+    /* Counter */
     int i = 1;
-    int iMinus1 = 0;
+
+    /* Value used for accurate counting of 
+     * odd numbers */
     int m = 0;
 
+    /* For correct counting in while loop */
     if((n % 2) == 1){
     	m = (n/2) + 1;
     } else {
     	m = n/2;
     }
 
+    /* Counts to n/2 if even and 
+     * (n/2)+1 if odd */
     while((i <= m)) {
     	
-    	iMinus1 = i - 1;
-    	
+        /* Print 1st number */
     	printf("% d \n", i);
-    	if(i == m && (n%2 == 1)){
+
+    	/* To make odd numbers work 
+         * exits scope before number 
+         * duplicates happen */
+        if(i == m && (n%2 == 1)){
         	return EXIT_SUCCESS;	
         }
-    	printf("% d \n", n-iMinus1);
 
-    	// printf("n: %d\n", n);
-    	// printf("iMinus1: %d\n", iMinus1);
-    	// printf("i: %d\n", i);
+        /* Value of n-(i-1) */
+    	printf("% d \n", n-(i-1));
 
         i++;
     }
