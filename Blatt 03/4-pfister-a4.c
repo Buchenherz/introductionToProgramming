@@ -24,7 +24,7 @@ int main(void) {
     char c = 'X';
     unsigned int d = 3147483647;
     long e = 31474836472;
-    //{ int sd = 232; }
+    // { int sd = 232; }
     int zero = 0;
     
     /* Print a to e correctly */
