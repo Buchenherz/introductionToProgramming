@@ -28,6 +28,7 @@ int main(void) {
 
 	printf("\n");
 
+	/* Checks for greatest number */
 	printf("The greatest number you entered is: ");
 	if(firstNumber >= secondNumber && firstNumber >= thirdNumber){
 		printf("%f\n", firstNumber);
@@ -37,6 +38,7 @@ int main(void) {
 		printf("%f\n", thirdNumber);
 	}
 
+	/* Checks for smallest number */
 	printf("The smallest number you entered is: ");
 	if(firstNumber <= secondNumber && firstNumber <= thirdNumber){
 		printf("%f\n", firstNumber);
