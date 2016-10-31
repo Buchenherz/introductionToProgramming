@@ -1,11 +1,11 @@
 CC = gcc
 CFLAGS = -Wall -Werror -std=c99
 
-all: 4-pfister-a1 4-pfister-a2 4-pfister-a2-re
+all: 4-pfister-a2 4-pfister-a3 4-pfister-a4 4-pfister-a5
 
 # $(RM) is predifined on most systems
 clean:
-	$(RM) 4-pfister-a1 4-pfister-a2
+	$(RM) 4-pfister-a2 4-pfister-a3 4-pfister-a4 4-pfister-a5
 
 # make knows all of this (so basically nothing but CFLAGS and CC needed)
 # Look at the GIT repo
