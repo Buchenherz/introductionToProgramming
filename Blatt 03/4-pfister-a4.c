@@ -24,10 +24,20 @@ int main(void) {
     char c = 'X';
     unsigned int d = 3147483647;
     long e = 31474836472;
-    { int sd = 232; }
-    int zero;
+    //{ int sd = 232; }
+    int zero = 0;
     
-    /* TODO print variables */
+    /* Print a to e correctly */
+
+    printf("%G\n", a);
+    printf("%f\n", b);
+    printf("%c\n", c);
+    printf("%u\n", d);
+    printf("%ld\n", e);
+
+    printf("\n\n");
+
+    /* Print special things */
 
     /* Out: 58 */
     printf("%X\n", c);
