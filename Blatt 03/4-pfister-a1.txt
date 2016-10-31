@@ -1,0 +1,43 @@
+Es folgt eine Liste mit Beschreibungen 
+der Funktion von Variablen. 
+Geben Sie jeweils einen sinnvollen Namen
+und Typ für die Variable an und begründen Sie Ihre
+Entscheidung.
+
+- Eine Variable welche innerhalb einer While-Schleife 
+  zum Zählen verwendet wird: 
+  i, because this is a counting variable almost everyone 
+  uses.
+
+- Wir schreiben eine Software zum Verwalten von 
+  Grundstücken und wollen eine Variable deﬁnieren welche 
+
+– die Gesamtﬂäche des Grundstücks enthält. 
+  area, because this is the English word for 'Fläche'.
+
+– die Anzahl der Grundstückseigentümer enthält.
+  areaOwners, because these are the owners of some area.
+
+– den Anfangsbuchstaben des Nachnamens des
+  Haupteigentümers des Grundstücks enthält.
+  lastNameInitial, because you immediately know what is
+  meant.
+
+– angibt ob es sich um ein Baugrundstück handelt oder
+  nicht.
+  isBuildingSite, because again, English. It's obvious
+  that this variable will be a bool, so I think this is
+  a good name.
+
+Erklären Sie zudem was Hungarian Notation bedeutet.
+
+Hungrarian notation is an identifier naming convention
+ in programming where a variable name starts with a 
+ group of lower-case letters (indicate type), followed 
+ by whatever name the programmer has chosen.
+
+Examples:
+
+bBusy : boolean
+cApples : count of items
+fBusy : float (or flag)
