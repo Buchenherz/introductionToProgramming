@@ -1,0 +1,19 @@
+Einführung in die Programmierung Blatt 01
+Clemens Pfister
+---
+
+Aufgabe 1
+
+	1.Welche Linux Distribution verwenden Sie?
+
+		- Ubuntu Linux version 16.04 LTS Desktop
+
+	2.Was ist gcc? Wozu wird es gebraucht? Gibt es Alternativen?
+
+		- Die GNU Compiler Collection (GCC) ist eine Compiler-Suite, die verschiedene Programmiersprachen, wie C, C++, Objective-C, Java, etc., in Maschinencode übersetzen kann. Man benötigt gcc also zur Übersetzung von einigen menschenlesbaren Programmiersprachen in die Maschinensprache des Computers. GCC stand ursprünglich für GNU C Compiler.  Alternativen sind zum Beispiel Clang, CodeWarrior, IAR C/C++ Compilers und viele mehr (siehe https://en.wikipedia.org/wiki/List_of_compilers#C_compilers). (wikipedia.org, gcc.gnu.org).
+
+	3.Welche gcc Version ist auf Ihrem System installiert?
+
+		- macOS (clang Compiler): Apple LLVM version 8.0.0 (clang-800.0.38)
+		
+		- Ubuntu Linux: gcc version 5.4.0 20160609

@@ -1,0 +1,33 @@
+Einführung in die Programmierung Blatt 01
+Clemens Pfister
+---
+
+Aufgabe 2
+
+	1.Was ist der Unterschied zwischen C Source code und einem Executable?
+	
+		- Unter C source code versteht man jenen code, den ein Programmierer bzw. eine Programmiererin schreibt (für Menschen lesbar). 
+
+		- Ein Executable ist ein vollständiges Programm, das direkt von einem Betriebssystem ausgeführt werden kann. (http://www.answers.com/Q/What_is_source_code_object_code_and_executable_code, https://www.quora.com/What-is-the-difference-between-an-object-code-and-an-executable-file?share=1)
+
+	2.Was passiert beim Kompilieren und warum ist das notwendig?
+
+		- Der C source code wird von einem sogenannten Compiler zu Maschinencode umgewandelt (kompiliert). Dieser übersetzte code kann dann als Executable von einem Rechner ausgeführt werden. Dies ist notwendig da ein Computer Programmiersprachen wie C nicht versteht. Ein Computer versteht nur Maschinencode. 
+
+	3.Was bewirken die Kommandozeilenparameter (z.B. -Wall) bei Ihrem Auf- ruf von gcc?
+
+		- -Wall: This enables all the warnings about constructions that some users consider questionable, and that are easy to avoid (or modify to prevent the warning), even in conjunction with macros. 
+
+		- -Werror: Make all warnings into errors. When this option is enabled, every warning will be treated as an error —> source code will not compile (until errors are fixed).
+
+		- -std=version: This specifies the standard to which code should conform (-std=c99 in our case).
+
+		- -o file: Write output to file. This option allows you to name your output file. 
+
+	4.Erklären Sie die einzelnen Befehle Ihres Hello World Programmcodes
+
+		- Siehe source code comments. 
+
+	5.Wie führt man das beim Kompilieren generierte Executable a2 aus?
+
+		- Man geht via Terminal in den Pfad der Datei (cd /Pfad/) und startet dann die Executable mit ./a2
