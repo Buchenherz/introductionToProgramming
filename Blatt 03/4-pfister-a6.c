@@ -46,7 +46,11 @@ int main(void) {
 		printf("%f\n", secondNumber);
 	} else if(thirdNumber <= firstNumber && thirdNumber <= secondNumber){
 		printf("%f\n", thirdNumber);
-	} 
+	}
+
+	if(firstNumber == secondNumber && secondNumber == thirdNumber){
+		printf("Your numbers are equal!\n");
+	}
 
     return EXIT_SUCCESS;
     

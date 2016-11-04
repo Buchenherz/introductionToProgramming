@@ -1,8 +1,8 @@
-//
+/*
 //  4-pfister-a2.c
 //
 //  Created by Clemens Pfister on 27/10/2016.
-//
+*/
 /* Schreiben Sie ein Programm in welchem die Variable
  * int n mit einem Wert > 1 initialisiert ist.
  * Geben Sie alle Zahlen zwischen 1 und n aus wobei abwechselnd
@@ -26,7 +26,8 @@ int main(void){
      * odd numbers */
     int m = 0;
 
-    /* For correct counting in while loop */
+    /* Set m for correct counting 
+     * in while loop */
     if((n % 2) == 1){
     	m = (n/2) + 1;
     } else {
@@ -41,13 +42,13 @@ int main(void){
     	printf("% d \n", i);
 
     	/* To make odd numbers work 
-         * exits scope before number 
+         * exits scope before  
          * duplicates happen */
         if(i == m && (n%2 == 1)){
         	return EXIT_SUCCESS;	
         }
 
-        /* Value of n-(i-1) */
+        /* Value of n-(i-1) (n-0, n-1, n-2) */
     	printf("% d \n", n-(i-1));
 
         i++;
