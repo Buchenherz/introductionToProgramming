@@ -1,8 +1,8 @@
-//
+/*
 //  4-pfister-a5.c
 //
 //  Created by Clemens Pfister on 31/10/2016.
-//
+*/
 /* 
  * Deﬁnieren sie eine Aufzählungskonstante (enum) welche 
  * verwendet werden kann um zu speichern ob sich ein Student 

@@ -1,8 +1,8 @@
-//
+/*
 //  4-pfister-a6.c
 //
 //  Created by Clemens Pfister on 31/10/2016.
-//
+*/
 /* 
  * Lesen Sie vom Benutzer drei Fließkommazahlen 
  * mittels scanf ein und geben Sie die größte 

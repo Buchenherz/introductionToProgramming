@@ -1,8 +1,8 @@
-//
+/*
 //  4-pfister-a3.c
 //
 //  Created by Clemens Pfister on 27/10/2016.
-//
+*/
 /* Schreiben Sie ein Programm welches die Fibonacci Zahlen 
  * kleiner n iterativ berechnet und ausgibt. 
  * Die Fibonacci Zahlen sind folgendermaßen deﬁniert: 

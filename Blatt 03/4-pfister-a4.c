@@ -1,8 +1,8 @@
-//
+/*
 //  4-pfister-a4.c
 //
 //  Created by Clemens Pfister on 31/10/2016.
-//
+*/
 /* 
  * Geben Sie den Inhalt der Variablen a, b, c, d und e korrekt
  * auf der Konsole aus
