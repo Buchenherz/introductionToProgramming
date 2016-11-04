@@ -52,7 +52,7 @@ int main(void) {
     printf("%.10f\n",b);
 
     /* Ausgabe: 088 */
-    printf("%0.3d\n", c);
+    printf("%03d\n", c);
 
     /* printf("%d",sd); 
      * Does not work, because var 'sd'
