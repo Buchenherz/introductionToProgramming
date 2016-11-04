@@ -2,6 +2,7 @@
 //  4-pfister-a2.c
 //
 //  Created by Clemens Pfister on 27/10/2016.
+//  https://git.io/vXWXq
 */
 /* Schreiben Sie ein Programm in welchem die Variable
  * int n mit einem Wert > 1 initialisiert ist.
@@ -15,8 +16,9 @@
 
 int main(void){
     
-    /* Value of n */
+    /* Value of n (default = 10) */
     int n = 10;
+    printf("Enter a number (will be count up and down): ");
     scanf("%d", &n);
 
     /* Counter */

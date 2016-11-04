@@ -2,6 +2,7 @@
 //  4-pfister-a4.c
 //
 //  Created by Clemens Pfister on 31/10/2016.
+//  https://git.io/vXWXq
 */
 /* 
  * Geben Sie den Inhalt der Variablen a, b, c, d und e korrekt
@@ -28,6 +29,8 @@ int main(void) {
     int zero = 0;
     
     /* Print a to e correctly */
+    printf("\n");
+    printf("Exercise 1:\n");
 
     printf("%G\n", a);
     printf("%f\n", b);
@@ -35,10 +38,10 @@ int main(void) {
     printf("%u\n", d);
     printf("%ld\n", e);
 
-    printf("\n\n");
 
     /* Print special things */
-
+    printf("\n");
+    printf("Exercise 2:\n");
     /* Out: 58 */
     printf("%X\n", c);
 
@@ -66,7 +69,8 @@ int main(void) {
      */
     printf("%d\n",zero);
 
+    /* formatting */
+    printf("\n");
     
     return EXIT_SUCCESS;
-    
 }

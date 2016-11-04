@@ -2,6 +2,7 @@
 //  4-pfister-a3.c
 //
 //  Created by Clemens Pfister on 27/10/2016.
+//  https://git.io/vXWXq
 */
 /* Schreiben Sie ein Programm welches die Fibonacci Zahlen 
  * kleiner n iterativ berechnet und ausgibt. 
@@ -17,6 +18,7 @@
 
 int main(void){
   int n = 10;
+  printf("Calculate Fibonacci smaller or equal to: ");
   scanf("%d", &n);
   int firstNumber = 0;
   int secondNumber = 1;

@@ -2,6 +2,7 @@
 //  4-pfister-a5.c
 //
 //  Created by Clemens Pfister on 31/10/2016.
+//  https://git.io/vXWXq
 */
 /* 
  * Deﬁnieren sie eine Aufzählungskonstante (enum) welche 
@@ -19,7 +20,7 @@
 #include <stdio.h>
 
 int main(void) {
-   
+
     enum studentType {Bachelor = 0, Master, PhD};
     
     /* enum studentType student = Master; */
@@ -35,5 +36,4 @@ int main(void) {
     }
     
     return EXIT_SUCCESS;
-    
 }

@@ -2,6 +2,7 @@
 //  4-pfister-a6.c
 //
 //  Created by Clemens Pfister on 31/10/2016.
+//	https://git.io/vXWXq
 */
 /* 
  * Lesen Sie vom Benutzer drei Fließkommazahlen 
