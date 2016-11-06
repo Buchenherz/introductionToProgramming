@@ -47,7 +47,7 @@ int main(void){
          * exits scope before  
          * duplicates happen */
         if(i == m && (n%2 == 1)){
-        	return EXIT_SUCCESS;	
+        	break;	
         }
 
         /* Value of n-(i-1) (n-0, n-1, n-2) */

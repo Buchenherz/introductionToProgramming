@@ -33,17 +33,18 @@ int main(void){
 
     /* if sum is greater than the number given
      * prevent output */
-    if(sum < n)
+    if(sum < n){
     printf("% d", firstNumber);
+    }
 
     sum = firstNumber + secondNumber;
     secondNumber = sum;
     
     /* if sum is greater than the number given
      * prevent output */
-    if(sum < n)
+    if(sum < n){
     printf("% d", secondNumber);
-    
+    }
   }
   /* Simple line break for formatting */
   printf("\n");
