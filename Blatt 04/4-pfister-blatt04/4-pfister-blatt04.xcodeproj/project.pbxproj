@@ -1,0 +1,516 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		743C86951DD8ECAF00028C9A /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 743C86941DD8ECAF00028C9A /* main.c */; };
+		743C86A21DD8ED1300028C9A /* 4-pfister-a2.c in Sources */ = {isa = PBXBuildFile; fileRef = 743C86A11DD8ED1300028C9A /* 4-pfister-a2.c */; };
+		743C86AD1DD8ED4A00028C9A /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 743C86AC1DD8ED4A00028C9A /* main.c */; };
+		749421E01DD9FC4A00C1A150 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 749421DF1DD9FC4A00C1A150 /* main.c */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		743C868F1DD8ECAF00028C9A /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+		743C869D1DD8ED1200028C9A /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+		743C86A81DD8ED4A00028C9A /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+		749421DB1DD9FC4A00C1A150 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		740845661DDA3C7C0097C9B9 /* 4-pfister-a3.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "4-pfister-a3.txt"; sourceTree = "<group>"; };
+		743C86911DD8ECAF00028C9A /* 4-pfister-blatt04 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "4-pfister-blatt04"; sourceTree = BUILT_PRODUCTS_DIR; };
+		743C86941DD8ECAF00028C9A /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
+		743C869F1DD8ED1200028C9A /* 4-pfister-a2 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "4-pfister-a2"; sourceTree = BUILT_PRODUCTS_DIR; };
+		743C86A11DD8ED1300028C9A /* 4-pfister-a2.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = "4-pfister-a2.c"; sourceTree = "<group>"; };
+		743C86AA1DD8ED4A00028C9A /* 4-pfister-a3 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "4-pfister-a3"; sourceTree = BUILT_PRODUCTS_DIR; };
+		743C86AC1DD8ED4A00028C9A /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
+		749421DD1DD9FC4A00C1A150 /* 4-pfister-a5 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "4-pfister-a5"; sourceTree = BUILT_PRODUCTS_DIR; };
+		749421DF1DD9FC4A00C1A150 /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
+		749421E51DD9FD3F00C1A150 /* 4-aufgaben-a5.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "4-aufgaben-a5.txt"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		743C868E1DD8ECAF00028C9A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		743C869C1DD8ED1200028C9A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		743C86A71DD8ED4A00028C9A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		749421DA1DD9FC4A00C1A150 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		743C86881DD8ECAF00028C9A = {
+			isa = PBXGroup;
+			children = (
+				743C86931DD8ECAF00028C9A /* 4-pfister-blatt04 */,
+				743C86A01DD8ED1300028C9A /* 4-pfister-a2 */,
+				743C86AB1DD8ED4A00028C9A /* 4-pfister-a3 */,
+				749421DE1DD9FC4A00C1A150 /* 4-pfister-a5 */,
+				743C86921DD8ECAF00028C9A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		743C86921DD8ECAF00028C9A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				743C86911DD8ECAF00028C9A /* 4-pfister-blatt04 */,
+				743C869F1DD8ED1200028C9A /* 4-pfister-a2 */,
+				743C86AA1DD8ED4A00028C9A /* 4-pfister-a3 */,
+				749421DD1DD9FC4A00C1A150 /* 4-pfister-a5 */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		743C86931DD8ECAF00028C9A /* 4-pfister-blatt04 */ = {
+			isa = PBXGroup;
+			children = (
+				743C86941DD8ECAF00028C9A /* main.c */,
+			);
+			path = "4-pfister-blatt04";
+			sourceTree = "<group>";
+		};
+		743C86A01DD8ED1300028C9A /* 4-pfister-a2 */ = {
+			isa = PBXGroup;
+			children = (
+				743C86A11DD8ED1300028C9A /* 4-pfister-a2.c */,
+			);
+			path = "4-pfister-a2";
+			sourceTree = "<group>";
+		};
+		743C86AB1DD8ED4A00028C9A /* 4-pfister-a3 */ = {
+			isa = PBXGroup;
+			children = (
+				743C86AC1DD8ED4A00028C9A /* main.c */,
+				740845661DDA3C7C0097C9B9 /* 4-pfister-a3.txt */,
+			);
+			path = "4-pfister-a3";
+			sourceTree = "<group>";
+		};
+		749421DE1DD9FC4A00C1A150 /* 4-pfister-a5 */ = {
+			isa = PBXGroup;
+			children = (
+				749421DF1DD9FC4A00C1A150 /* main.c */,
+				749421E51DD9FD3F00C1A150 /* 4-aufgaben-a5.txt */,
+			);
+			path = "4-pfister-a5";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		743C86901DD8ECAF00028C9A /* 4-pfister-blatt04 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 743C86981DD8ECAF00028C9A /* Build configuration list for PBXNativeTarget "4-pfister-blatt04" */;
+			buildPhases = (
+				743C868D1DD8ECAF00028C9A /* Sources */,
+				743C868E1DD8ECAF00028C9A /* Frameworks */,
+				743C868F1DD8ECAF00028C9A /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "4-pfister-blatt04";
+			productName = "4-pfister-blatt04";
+			productReference = 743C86911DD8ECAF00028C9A /* 4-pfister-blatt04 */;
+			productType = "com.apple.product-type.tool";
+		};
+		743C869E1DD8ED1200028C9A /* 4-pfister-a2 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 743C86A31DD8ED1300028C9A /* Build configuration list for PBXNativeTarget "4-pfister-a2" */;
+			buildPhases = (
+				743C869B1DD8ED1200028C9A /* Sources */,
+				743C869C1DD8ED1200028C9A /* Frameworks */,
+				743C869D1DD8ED1200028C9A /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "4-pfister-a2";
+			productName = "4-pfister-a2";
+			productReference = 743C869F1DD8ED1200028C9A /* 4-pfister-a2 */;
+			productType = "com.apple.product-type.tool";
+		};
+		743C86A91DD8ED4A00028C9A /* 4-pfister-a3 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 743C86AE1DD8ED4A00028C9A /* Build configuration list for PBXNativeTarget "4-pfister-a3" */;
+			buildPhases = (
+				743C86A61DD8ED4A00028C9A /* Sources */,
+				743C86A71DD8ED4A00028C9A /* Frameworks */,
+				743C86A81DD8ED4A00028C9A /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "4-pfister-a3";
+			productName = "4-pfister-a3";
+			productReference = 743C86AA1DD8ED4A00028C9A /* 4-pfister-a3 */;
+			productType = "com.apple.product-type.tool";
+		};
+		749421DC1DD9FC4A00C1A150 /* 4-pfister-a5 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 749421E31DD9FC4A00C1A150 /* Build configuration list for PBXNativeTarget "4-pfister-a5" */;
+			buildPhases = (
+				749421D91DD9FC4A00C1A150 /* Sources */,
+				749421DA1DD9FC4A00C1A150 /* Frameworks */,
+				749421DB1DD9FC4A00C1A150 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "4-pfister-a5";
+			productName = "4-pfister-a5";
+			productReference = 749421DD1DD9FC4A00C1A150 /* 4-pfister-a5 */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		743C86891DD8ECAF00028C9A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0800;
+				ORGANIZATIONNAME = "Clemens Pfister";
+				TargetAttributes = {
+					743C86901DD8ECAF00028C9A = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = KV8UJJSSGQ;
+						ProvisioningStyle = Automatic;
+					};
+					743C869E1DD8ED1200028C9A = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = KV8UJJSSGQ;
+						ProvisioningStyle = Automatic;
+					};
+					743C86A91DD8ED4A00028C9A = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = KV8UJJSSGQ;
+						ProvisioningStyle = Automatic;
+					};
+					749421DC1DD9FC4A00C1A150 = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = KV8UJJSSGQ;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 743C868C1DD8ECAF00028C9A /* Build configuration list for PBXProject "4-pfister-blatt04" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 743C86881DD8ECAF00028C9A;
+			productRefGroup = 743C86921DD8ECAF00028C9A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				743C86901DD8ECAF00028C9A /* 4-pfister-blatt04 */,
+				743C869E1DD8ED1200028C9A /* 4-pfister-a2 */,
+				743C86A91DD8ED4A00028C9A /* 4-pfister-a3 */,
+				749421DC1DD9FC4A00C1A150 /* 4-pfister-a5 */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		743C868D1DD8ECAF00028C9A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				743C86951DD8ECAF00028C9A /* main.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		743C869B1DD8ED1200028C9A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				743C86A21DD8ED1300028C9A /* 4-pfister-a2.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		743C86A61DD8ED4A00028C9A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				743C86AD1DD8ED4A00028C9A /* main.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		749421D91DD9FC4A00C1A150 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				749421E01DD9FC4A00C1A150 /* main.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		743C86961DD8ECAF00028C9A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		743C86971DD8ECAF00028C9A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		743C86991DD8ECAF00028C9A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEVELOPMENT_TEAM = KV8UJJSSGQ;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		743C869A1DD8ECAF00028C9A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEVELOPMENT_TEAM = KV8UJJSSGQ;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		743C86A41DD8ED1300028C9A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEVELOPMENT_TEAM = KV8UJJSSGQ;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		743C86A51DD8ED1300028C9A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEVELOPMENT_TEAM = KV8UJJSSGQ;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		743C86AF1DD8ED4A00028C9A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEVELOPMENT_TEAM = KV8UJJSSGQ;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		743C86B01DD8ED4A00028C9A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEVELOPMENT_TEAM = KV8UJJSSGQ;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		749421E11DD9FC4A00C1A150 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEVELOPMENT_TEAM = KV8UJJSSGQ;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		749421E21DD9FC4A00C1A150 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEVELOPMENT_TEAM = KV8UJJSSGQ;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		743C868C1DD8ECAF00028C9A /* Build configuration list for PBXProject "4-pfister-blatt04" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				743C86961DD8ECAF00028C9A /* Debug */,
+				743C86971DD8ECAF00028C9A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		743C86981DD8ECAF00028C9A /* Build configuration list for PBXNativeTarget "4-pfister-blatt04" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				743C86991DD8ECAF00028C9A /* Debug */,
+				743C869A1DD8ECAF00028C9A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		743C86A31DD8ED1300028C9A /* Build configuration list for PBXNativeTarget "4-pfister-a2" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				743C86A41DD8ED1300028C9A /* Debug */,
+				743C86A51DD8ED1300028C9A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		743C86AE1DD8ED4A00028C9A /* Build configuration list for PBXNativeTarget "4-pfister-a3" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				743C86AF1DD8ED4A00028C9A /* Debug */,
+				743C86B01DD8ED4A00028C9A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		749421E31DD9FC4A00C1A150 /* Build configuration list for PBXNativeTarget "4-pfister-a5" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				749421E11DD9FC4A00C1A150 /* Debug */,
+				749421E21DD9FC4A00C1A150 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 743C86891DD8ECAF00028C9A /* Project object */;
+}
