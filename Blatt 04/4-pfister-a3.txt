@@ -1,0 +1,14 @@
+• wie werden boolsche-Werte in C repräsentiert?
+	Es wird der Wert 0 als false interpretiert und Werte ungleich 0 als true.
+
+• welche Werte ensprechen dem boolschen Wert true?
+• welche Werte ensprechen dem boolschen Wert false?
+	Alle werte würden dem booleschen Wert true entsprechen
+
+• welche expliziten Typecasts wurden verwendet und
+  welchen Einﬂuss haben sie auf das Ergebnis? 
+  (short), 0x, (int)
+    
+• Finden implizite Typecasts statt und wenn ja wo?
+	Integerwert der 11. Zeile wird wieder zu einem double
+	genauso wie die hexzahlen der 9. Zeile
