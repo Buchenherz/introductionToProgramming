@@ -11,7 +11,15 @@ int main(void) {
     float a = 1.2;
     printf("sizeof(a) = %d\n", sizeof(a)); /* 4 */
     printf("printf(abc) = %d\n", printf("abc\n")); /* 4 */
-    double x = sizeof(a) * 2 && 25 / printf("abc\n") ^ 2 + 1;
+    double x = (sizeof(a) * 2 && (25 / printf("abc\n")) ^ (2 + 1));
+    /* '*' is stronger than && 
+     * printf() returns the characters within printf 
+     * the ^ is not the power of something, it's the bitwise XOR 
+     * operator. 
+     * sizeof() is an operator and returns the result of the total 
+     * numbers of bytes in an array.
+     *  */
+
     /* x = 4 * 2 && 25 / 4^2 + 1 --> >=1 && >=1 --> True */
     printf("(short)a / 2 = %d\n", (short)a/2); // 1
     double y = ((short)a / 2 + (3 | 8) >> 2);
@@ -20,6 +28,7 @@ int main(void) {
     double z = a * 6;
     /* 1.2 * 6 = 7.2 */
     double u = 0xBAECAB1E ? 1 << 1 : 0xDEADC0DE;
+    /* The 1s are char's (character will cast to int) */
     /* 3136072478 == True */
     /* if true ? 01 << 1 --> 10 (= 2) else 0xDEADC0DE */
     double v = (u + z * 11) / 6;
