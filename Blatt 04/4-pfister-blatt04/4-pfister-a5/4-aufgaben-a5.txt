@@ -1,0 +1,17 @@
+case 0:
+ABCD (switch wird erst nach break statement verlassen)
+
+case 1:
+CD (switch wird erst nach break statement verlassen)
+
+case 2:
+D (case 2 enthält einen break)
+
+case 3:
+E (case 3 enthält einen break)
+
+case 4:
+FG (switch wird nach default verlassen)
+
+case !(0,1,2,3,4):
+G (default case für alles andere)

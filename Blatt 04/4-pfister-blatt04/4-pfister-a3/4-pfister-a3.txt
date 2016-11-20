@@ -1,0 +1,2 @@
+sizeof(a) = 4
+printf("abc\n") = 4

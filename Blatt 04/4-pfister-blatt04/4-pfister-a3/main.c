@@ -1,0 +1,55 @@
+#include <stdlib.h>
+#include <stdio.h>
+
+int main(void) {
+    float a = 1.2;
+    printf("sizeof(a) = %d\n", sizeof(a)); /* 4 */
+    printf("printf(abc) = %d\n", printf("abc\n")); /* 4 */
+    double x = sizeof(a) * 2 && 25 / printf("abc\n") ^ 2 + 1;
+    /* x = 4 * 2 && 25 / 4^2 + 1 --> >=1 && >=1 --> True */
+    printf("(short)a / 2 = %d\n", (short)a/2); // 1
+    double y = ((short)a / 2 + (3 | 8) >> 2);
+    /* 0 + (0011 | 1000 == 1011 = 11) >> 2 
+     * --> 1011 --> 0101 --> 0010 --> 2 */
+    double z = a * 6;
+    /* 1.2 * 6 = 7.2 */
+    double u = 0xBAECAB1E ? 1 << 1 : 0xDEADC0DE;
+    /* 3136072478 == True */
+    /* if true ? 01 << 1 --> 10 (= 2) else 0xDEADC0DE */
+    double v = (u + z * 11) / 6;
+    /* (7.2 * 11.0 + 2.0)/6 = 13.533334 (last decimal rounded) */
+    double w = (int)(u + v * 10) / 2;
+    /* (int)(2.0+13.533334*10)/2 because casting to int 68 */
+
+    printf("x=%lf\n", x); //x=1.000000
+    printf("y=%lf\n", y); //y=2.000000
+    printf("z=%lf\n", z); //z=7.200000
+    printf("u=%lf\n", u); //u=2.000000
+    printf("v=%lf\n", v); //v=13.533334
+    printf("w=%lf\n", w); //w=68.000000
+    
+    return EXIT_SUCCESS;
+}
+/*
+- Wie werden boolsche-Werte in C repräsentiert?
+    Es wird der Wert 0 als false interpretiert und Werte ungleich 0 als
+    true.
+ 
+- Welche Werte ensprechen dem boolschen Wert true?
+    Alle Werte außer 0.
+    Hier: Alle Werte bis auf short(a)/2.
+- Welche Werte ensprechen dem boolschen Wert false?
+    Wert 0.
+
+- Welche expliziten Typecasts wurden verwendet und
+    welchen Einﬂuss haben sie auf das Ergebnis?
+    (short): Kürzt das Ergebnis massiv ab + keine Kommastellen.
+    0x: Als Zeichen für eine darauffolgende Hexadezimalzahl
+    (int): Umwandlung zu integer. Keine Kommastellen.
+ 
+ • Finden implizite Typecasts statt und wenn ja wo?
+    8. Zeile:   int     -->   double
+    11. Zeile:  short   -->   double
+    16. Zeile:  int     -->   double
+    21. Zeile:  int     -->   double
+ */
