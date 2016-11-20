@@ -67,32 +67,7 @@ int main() {
 }
 
 int test_program(){
-    double x_1 = 0;
-    double x_2 = 0;
-    int counter1 = 0;
-    int counter2 = 0;
-    int counter3 = 0;
-    for (double a = -1.0; a <= 1; a+=0.10) {
-        for (double b = -1.0; b <= 1; b+=0.10){
-            for (double c = -1.0; c <= 1; c+=0.10){
-                compute_x1(a, b, c);
-                compute_x2(a, b, c);
-                if (x_1 == x_2 && x_1 != 0) {
-                    printf("There is one solution for a: %lf b: %lf c: %lf!\n", a, b, c);
-                    counter1++;
-                } else if (x_1 == 0 && x_2 == 0) {
-                    printf("There is no solution for a: %lf b: %lf c: %lf!\n", a, b, c);
-                    counter2++;
-                } else if (x_1 != x_2) {
-                    printf("There are two solutions for a: %lf b: %lf c: %lf!\n", a, b, c);
-                    counter3++;
-                }
-            }
-        }
-    }
-    printf("1 Solution: %d\n", counter1);
-    printf("No Solution: %d\n", counter2);
-    printf("2 Solutions: %d\n", counter3);
+    
     return EXIT_SUCCESS;
 }
 
