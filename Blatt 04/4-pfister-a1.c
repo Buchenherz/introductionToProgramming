@@ -1,6 +1,7 @@
 /*
  * 4-pfister-a1.c
  * Created by Clemens Pfister on 09/11/2016.
+ * https://git.io/vXWXq
  */
 
 #include <stdio.h>
