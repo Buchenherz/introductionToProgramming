@@ -34,7 +34,7 @@ double compute_x1(double a, double b, double c){
         return 0;
     }
     double x_1 = ((-1 * b) + sqrt(discriminant))/(2*a);
-    // printf("x1 = %lf\n", x_1);
+    printf("x1 = %lf\n", x_1);
     return x_1;
 }
 
@@ -45,12 +45,12 @@ double compute_x2(double a, double b, double c){
         return 0;
     }
     double x_2 = ((-1 * b) - sqrt(discriminant))/(2*a);
-    // printf("x2 = %lf\n", x_2);
+    printf("x2 = %lf\n", x_2);
     return x_2;
 }
 
 int main() {
-    test_program();
+    // test_program();
     double a, b, c = 0.0;
     printf("Please enter a: ");
     scanf("%lf", &a);
