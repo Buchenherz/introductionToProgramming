@@ -38,12 +38,6 @@ int main() {
         scanf("%d", &c);
         printf("\n");
         
-        /* Emergency break if not a digit */
-        if (!isdigit(a) || !isdigit(b) || !isdigit(c)) {
-            printf("You entered a character, not a digit...");
-            break;
-        }
-        
         /* Calculate distances abs() makes value positive if negative 
          * DRY!! */
         int dist_a = abs(num - a);

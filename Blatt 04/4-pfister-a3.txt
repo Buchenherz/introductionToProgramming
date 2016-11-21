@@ -9,7 +9,7 @@
 
 int main(void) {
     float a = 1.2;
-    printf("sizeof(a) = %d\n", sizeof(a)); /* 4 */
+    printf("sizeof(a) = %d\n", sizeof(a)); /* 4 as short */
     printf("printf(abc) = %d\n", printf("abc\n")); /* 4 */
     double x = (sizeof(a) * 2 && (25 / printf("abc\n")) ^ (2 + 1));
     /* '*' is stronger than && 
