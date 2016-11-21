@@ -1,8 +1,8 @@
 //
-//  main.c
-//  4-pfister-a2
+//  4-pfister-a2-testing.c
+//  Blatt05
 //
-//  Created by Clemens Pfister on 18/11/2016.
+//  Created by Clemens Pfister on 21/11/2016.
 //  Copyright © 2016 Clemens Pfister. All rights reserved.
 //
 
@@ -16,22 +16,51 @@ double compute_x1(double a, double b, double c);
 double compute_x2(double a, double b, double c);
 
 int main() {
-    system("clear");
+    
     printf("/*=======================================\n");
     printf("=               Solve x for             =\n");
     printf("=            ax^2 + bx + c = 0          =\n");
     printf("=======================================*/\n");
-
-    double a, b, c = 0.0;
-    printf("Please enter a: ");
-    scanf("%lf", &a);
-    printf("Please enter b: ");
-    scanf("%lf", &b);
-    printf("Please enter c: ");
-    scanf("%lf", &c);
+    
+    /* If a is 0, program will find two solutions
+     * with NaN and -inf because division through 0 */
+    
+    compute_x1(0, 2, 7);
+    compute_x2(0, 2, 7);
+    
     printf("\n");
-    compute_x1(a, b, c);
-    compute_x2(a, b, c);
+    
+    /* If discriminant is negative, no solution is found */
+    
+    compute_x1(1, 2, 1);
+    compute_x2(1, 2, 1);
+    
+    printf("\n");
+    
+    /* If the user enters something different then a number
+     * the programm will output solution 0.0 */
+    
+    double x = 0;
+    printf("Enter char: ");
+    compute_x1(scanf("%lf", &x), 1, 2);
+    compute_x2(scanf("%lf", &x), 1, 2);
+    
+    
+    /* Testing for some numbers
+    
+    for(int i = -15; i <= 15; i++){
+        for (int j = -15; j <= 15; j++) {
+            for (int k = -15; k <= 15; k++) {
+                compute_x1(i, j, k);
+                compute_x2(i, j, k);
+                
+                printf("\n");
+            }
+        }
+    }
+    
+    */
+    
     
     return EXIT_SUCCESS;
 }
