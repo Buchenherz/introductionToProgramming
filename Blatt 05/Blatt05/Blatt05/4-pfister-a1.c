@@ -10,9 +10,13 @@
 #include <stdlib.h>
 #include <time.h>
 
+
+/* Generates a random integer between 1 and 100 */
 int rng(void){
     srand(time(NULL));
     int a = (rand() % 100) + 1;
+    
+    /* For testing purposes */
     printf("%d\n", a);
     return a;
 }
@@ -20,20 +24,20 @@ int rng(void){
 
 int smallest_distance(int a, int b, int c, int num){
     
-    printf("The smallest distance is: ");
-    
-    /* Calculate distances abs() makes value positive if negative */
+    /* Calculate distances abs() makes value positive if negative 
+     * Not perfect because same declaration further down */
     int dist_a = abs(num - a);
     int dist_b = abs(num - b);
     int dist_c = abs(num - c);
+    int distance = 0;
     
     /* Checks for smallest distance between num and a, b, c */
     if(dist_a <= dist_b && dist_a <= dist_c){
-        printf("%d\n", dist_a);
+        return distance = dist_a;
     } else if(dist_b <= dist_a && dist_b <= dist_c){
-        printf("%d\n", dist_b);
+        return distance = dist_b;
     } else if(dist_c <= dist_a && dist_c <= dist_b){
-        printf("%d\n", dist_c);
+        return distance = dist_c;
     }
     
     return EXIT_SUCCESS;
@@ -55,20 +59,34 @@ int main() {
         printf("Please enter your third number: ");
         scanf("%d", &c);
         
+        /* Calculate distances abs() makes value positive if negative 
+         * DRY!! */
+        int dist_a = abs(num - a);
+        int dist_b = abs(num - b);
+        int dist_c = abs(num - c);
+        int distance = smallest_distance(a, b, c, num);
+        
         /* Check number vs a, b, c */
+        
+        /* If correct number was chosen */
         if(a == num || b == num || c == num){
             printf("Congratulations, the correct number was: %d\n", num);
             return EXIT_SUCCESS;
-        } else if ((a > num && b > num) || (a > num && c > num) || (b > num && c > num)) {
-            printf("The numbers you choose were for the most part greater than wanted!\n");
-            smallest_distance(a, b, c, num);
-        } else if ((a < num && b < num) || (a < num && c < num) || (b < num && c < num)) {
-            printf("The numbers you choose were for the most part smaller than wanted!\n");
-            smallest_distance(a, b, c, num);
-        } else {
-            /* FIXME: Get equal far away to work */
-            printf("The numbers you choose are equally far away than wanted!\n");
-            smallest_distance(a, b, c, num);
+        }
+        /* If entered numbers were equally far away (using distances) */
+        else if ((dist_a == dist_b)||(dist_b == dist_a)||(dist_c == dist_a) || (dist_c == dist_b)){
+            printf("The numbers you chose are equally far away than wanted!\n");
+            printf("The smallest distance is: %d\n", distance);
+        }
+        /* Are 2 of entered numbers greater than rng? */
+        else if ((a > num && b > num) || (a > num && c > num) || (b > num && c > num)) {
+            printf("The numbers you chose were for the most part greater than wanted!\n");
+            printf("The smallest distance is: %d\n", distance);
+        }
+        /* Are 2 of entered numbers smaller than rng? */
+        else if ((a < num && b < num) || (a < num && c < num) || (b < num && c < num)) {
+            printf("The numbers you chose were for the most part smaller than wanted!\n");
+            printf("The smallest distance is: %d\n", distance);
         }
     }
 }

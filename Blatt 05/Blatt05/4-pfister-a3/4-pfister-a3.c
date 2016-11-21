@@ -42,7 +42,7 @@ double subtract(){
     return a - b;
 }
 
-double multiply(){
+long double multiply(){
     printf("*** Sie befinden sich im Multiplizierer ***\n");
     double a, b = 0.0;
     
