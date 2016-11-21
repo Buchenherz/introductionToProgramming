@@ -10,6 +10,25 @@
 #include <stdlib.h>
 #include <math.h>
 
+double compute_discriminant(double a, double b, double c);
+short is_solvable(double discriminant);
+double compute_x1(double a, double b, double c);
+double compute_x2(double a, double b, double c);
+int test_program();
+
+int main() {
+    double a, b, c = 0.0;
+    printf("Please enter a: ");
+    scanf("%lf", &a);
+    printf("Please enter b: ");
+    scanf("%lf", &b);
+    printf("Please enter c: ");
+    scanf("%lf", &c);
+    compute_x1(a, b, c);
+    compute_x2(a, b, c);
+    
+    return EXIT_SUCCESS;
+}
 
 double compute_discriminant(double a, double b, double c){
     double discriminant = (b * b) - (4 * a * c);
@@ -63,23 +82,7 @@ double compute_x2(double a, double b, double c){
     return EXIT_SUCCESS;
 }
 
-int main() {
-    double a, b, c = 0.0;
-    printf("Please enter a: ");
-    scanf("%lf", &a);
-    printf("Please enter b: ");
-    scanf("%lf", &b);
-    printf("Please enter c: ");
-    scanf("%lf", &c);
-    compute_x1(a, b, c);
-    compute_x2(a, b, c);
-    
-    return EXIT_SUCCESS;
-}
-
 int test_program(){
     
     return EXIT_SUCCESS;
 }
-
-

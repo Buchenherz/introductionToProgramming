@@ -9,69 +9,91 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int calc_mode = 0;
-
+double add();
+double subtract();
+double multiply();
 /* FIXME: Add some kind of "input" function here because DRY!! */
 
+int calc_mode = 0;
+
+int main() {
+    while(1 == 1){
+        printf("/*=======================================\n");
+        printf("=            Taschenrechner:            =\n");
+        printf("+            1-Addieren                 +\n");
+        printf("-            2-Subtrahieren             -\n");
+        printf("*            3-Multiplizieren           *\n");
+        printf("q            0-Beenden                  q\n");
+        printf("=======================================*/\n");
+        printf("   Please choose a mode from above: ");
+        scanf("%d", &calc_mode);
+        printf("\n\n");
+        
+        if (calc_mode == 0) {
+            system ( "clear" );
+            return EXIT_SUCCESS;
+        } else if (calc_mode == 1) {
+            system ( "clear" );
+            add();
+        } else if (calc_mode == 2) {
+            system ( "clear" );
+            subtract();
+        } else if (calc_mode == 3) {
+            system ( "clear" );
+            multiply();
+        }
+        
+        continue;
+    }
+}
 
 double add(){
-    printf("+++ Sie befinden sich im Addierer +++\n");
+    printf("+++++++++++++++++++++++++++++++++++++++++\n");
+    printf("+       You are in addition mode!       +\n");
+    printf("+               a + b = ?               +\n");
+    printf("+++++++++++++++++++++++++++++++++++++++++\n");
+    printf("\n");
     double a, b = 0.0;
-    printf("Bitte geben Sie die erste Zahl ein: ");
+    printf("Please enter a: ");
     scanf("%lf", &a);
-    printf("Bitte geben Sie die zweite Zahl ein: ");
+    printf("Please enter b: ");
     scanf("%lf", &b);
     
     /* FIXME: Add solution variable because 2 calculations are not needed */
     
-    printf("%lf\n", a+b);
-    return a + b;
+    printf("%lf\n\n", a+b);
+    return EXIT_SUCCESS;
 }
 
 
 double subtract(){
-    printf("--- Sie befinden sich im Subtrahierer ---\n");
+    printf("-----------------------------------------\n");
+    printf("-      You are in subtraction mode!     -\n");
+    printf("-               a - b = ?               -\n");
+    printf("-----------------------------------------\n");
+    printf("\n");
     double a, b = 0.0;
-    
-    printf("Bitte geben Sie die erste Zahl ein: ");
+    printf("Please enter a: ");
     scanf("%lf", &a);
-    printf("Bitte geben Sie die zweite Zahl ein: ");
+    printf("Please enter b: ");
     scanf("%lf", &b);
     
-    printf("%lf\n", a-b);
-    return a - b;
+    printf("%lf\n\n", a-b);
+    return EXIT_SUCCESS;
 }
 
-long double multiply(){
-    printf("*** Sie befinden sich im Multiplizierer ***\n");
+double multiply(){
+    printf("*****************************************\n");
+    printf("*      You are in subtraction mode!     *\n");
+    printf("*               a * b = ?               *\n");
+    printf("*****************************************\n");
+    printf("\n");
     double a, b = 0.0;
-    
-    printf("Bitte geben Sie die erste Zahl ein: ");
+    printf("Please enter a: ");
     scanf("%lf", &a);
-    printf("Bitte geben Sie die zweite Zahl ein: ");
+    printf("Please enter b: ");
     scanf("%lf", &b);
     
-    printf("%lf\n", a*b);
-    return a * b;
-}
-
-
-int main() {
-    while(1 == 1){
-    printf("Taschenrechner:\n1-Addieren, 2-Subtrahieren, 3-Multiplizieren, 0-Beenden\n");
-    printf("Bitte wählen Sie einen Modus aus: ");
-    scanf("%d", &calc_mode);
-    
-    if (calc_mode == 0) {
-        return EXIT_SUCCESS;
-    } else if (calc_mode == 1) {
-        add();
-    } else if (calc_mode == 2) {
-        subtract();
-    } else if (calc_mode == 3) {
-        multiply();
-    }
-    
-    continue;
-    }
+    printf("%lf\n\n", a*b);
+    return EXIT_SUCCESS;
 }
