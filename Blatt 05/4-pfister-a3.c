@@ -30,6 +30,7 @@ int main() {
         printf("\n\n");
         
         if (calc_mode == 0) {
+            system ( "clear" );
             return EXIT_SUCCESS;
         } else if (calc_mode == 1) {
             system ( "clear" );
