@@ -47,6 +47,7 @@
 		7420B6461DE9CBD7002D795F /* 4-pfister-a1.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = "4-pfister-a1.c"; sourceTree = "<group>"; };
 		747F13721DE9D810003C9014 /* 4-pfister-a3 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "4-pfister-a3"; sourceTree = BUILT_PRODUCTS_DIR; };
 		747F13741DE9D810003C9014 /* 4-pfister-a3.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = "4-pfister-a3.c"; sourceTree = "<group>"; };
+		748852901DEC2F780002A8EB /* 4-pfister-a2.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "4-pfister-a2.txt"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.c; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +78,7 @@
 		7420B62D1DE9C99E002D795F = {
 			isa = PBXGroup;
 			children = (
+				748852901DEC2F780002A8EB /* 4-pfister-a2.txt */,
 				7420B6451DE9CBD7002D795F /* 4-pfister-a1 */,
 				747F13731DE9D810003C9014 /* 4-pfister-a3 */,
 				7420B6371DE9C99F002D795F /* Products */,
@@ -407,6 +409,7 @@
 				747F13781DE9D810003C9014 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
