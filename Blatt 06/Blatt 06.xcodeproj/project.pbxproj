@@ -47,7 +47,7 @@
 		7420B6461DE9CBD7002D795F /* 4-pfister-a1.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = "4-pfister-a1.c"; sourceTree = "<group>"; };
 		747F13721DE9D810003C9014 /* 4-pfister-a3 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "4-pfister-a3"; sourceTree = BUILT_PRODUCTS_DIR; };
 		747F13741DE9D810003C9014 /* 4-pfister-a3.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = "4-pfister-a3.c"; sourceTree = "<group>"; };
-		748852901DEC2F780002A8EB /* 4-pfister-a2.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "4-pfister-a2.txt"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.c; };
+		748852901DEC2F780002A8EB /* 4-pfister-a2.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "4-pfister-a2.txt"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */

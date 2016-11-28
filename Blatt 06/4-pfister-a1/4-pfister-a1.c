@@ -1,10 +1,10 @@
+/*
+//  4-pfister-a1.c
 //
-//  main.c
-//  4-pfister-a1
-//
+//  http://git.io/vXWXq
 //  Created by Clemens Pfister on 26/11/2016.
 //  Copyright © 2016 Clemens Pfister. All rights reserved.
-//
+*/
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -21,14 +21,15 @@ int main(void) {
     printf("Enter b: "); scanf("%d", &b);
     printf("Enter c (factorial): "); scanf("%d", &c);
     
+    /* Execute function with these numbers */
     int i = sum(a, b);
-    printf("%d\n", i);
+    printf("a + b = %d\n", i);
     
     int j = mult(a, b);
-    printf("%d\n", j);
+    printf("a * b = %d\n", j);
     
     int k = factorial(c);
-    printf("%d\n", k);
+    printf("c! = %d\n", k);
 
 }
 

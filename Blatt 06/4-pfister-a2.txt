@@ -1,3 +1,10 @@
+/*
+ //  4-pfister-a2.txt
+ //
+ //  http://git.io/vXWXq
+ //  Created by Clemens Pfister on 28/11/2016.
+ //  Copyright © 2016 Clemens Pfister. All rights reserved.
+ */
 
 Adresse Inhalt (Binär)
 . . .   . . .
@@ -31,21 +38,30 @@ Adresse Inhalt (Binär)
 
 •   Die Variable int a liegt auf Adresse 13. Was gibt also
     printf("%d", a) aus?
+
     It print's 13, because the base 10 value of 00001101 is 13.
+
+    ---
 
 •   Gegeben sei die Variable int d. Der Befehl printf("%d", d)
     gibt 113 aus. Was wird also printf("%p", &d) ausgeben?
+
     The integer 113 is saved in Address 29. So printf("%p", &d)
     returns 29 (Address value).
+
+    ---
 
 •   Der Zeiger int* p liegt auf Adresse 22. Auf welche Adresse
     verweist dieser? Was wird bei printf("%p", p) und bei
     printf("%d", *p) ausgegeben?
+
     Pointer int* p points to address 16 (this is the saved
     integer value of address 22).
     printf("%p", p) shows the address value of value of address
     22. printf("%p", p) = 16
     printf("%d", *p) is the dereferenced value of address 22. = 0
+
+    ---
 
 •   Gegeben sei der Pointer int* pc. Der Befehl
     printf("%d", *pc) gibt 136 auf dem Bildschirm aus.
@@ -54,6 +70,8 @@ Adresse Inhalt (Binär)
 
     Points to address 30 (value of address 30 is 136).
     Pointer lies on address 08 (value of address 08 is 30).
+
+    ---
 
 •   Der Pointer long int* lp liegt auf Adresse 9. Welche Länge
     in Bytes hat dieser Pointer. Welche Länge hat der
@@ -65,6 +83,7 @@ Adresse Inhalt (Binär)
     The length the pointer saves to is 2 Byte
     printf("%ld", *lp) will return 25. // Not certain
 
+    ---
 
 •   Wir erzeugen eine neue Variable int c = 64 und der Compiler
     legt diese auf Adresse 28. Anschließend erzeugen wir einen
