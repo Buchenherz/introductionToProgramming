@@ -1,0 +1,93 @@
+
+Adresse Inhalt (Binär)
+. . .   . . .
+08      00011110
+09      00011001 --> = 25
+10      00000000
+11      00000000
+12      00000100
+13      00001101 --> = 13
+14      00000001
+15      00000000
+16      00000000
+17      00000000
+18      01111000
+19      00000000
+20      00100110
+21      00000000
+22      00010000 --> = 16
+23      00000000
+24      00000000
+25      00100000
+26      00000000
+27      00010010
+28      00000000 --> overwritten with 01000000
+29      01110001 --> = 113
+30      10001000 --> = 136
+. . .   . . .
+
+
+
+
+•   Die Variable int a liegt auf Adresse 13. Was gibt also
+    printf("%d", a) aus?
+    It print's 13, because the base 10 value of 00001101 is 13.
+
+•   Gegeben sei die Variable int d. Der Befehl printf("%d", d)
+    gibt 113 aus. Was wird also printf("%p", &d) ausgeben?
+    The integer 113 is saved in Address 29. So printf("%p", &d)
+    returns 29 (Address value).
+
+•   Der Zeiger int* p liegt auf Adresse 22. Auf welche Adresse
+    verweist dieser? Was wird bei printf("%p", p) und bei
+    printf("%d", *p) ausgegeben?
+    Pointer int* p points to address 16 (this is the saved
+    integer value of address 22).
+    printf("%p", p) shows the address value of value of address
+    22. printf("%p", p) = 16
+    printf("%d", *p) is the dereferenced value of address 22. = 0
+
+•   Gegeben sei der Pointer int* pc. Der Befehl
+    printf("%d", *pc) gibt 136 auf dem Bildschirm aus.
+    Auf welche Adresse verweist der Zeiger? An welcher Adresse
+    liegt der Zeiger?
+
+    Points to address 30 (value of address 30 is 136).
+    Pointer lies on address 08 (value of address 08 is 30).
+
+•   Der Pointer long int* lp liegt auf Adresse 9. Welche Länge
+    in Bytes hat dieser Pointer. Welche Länge hat der
+    Speicherbereich, auf den er verweist. Was wird der Befehl
+    printf("%ld", *lp) ausgeben.
+
+    long int is defined as 16 Bit in our example;
+    1 Byte has 8 Bit, so the length of this pointer is 1 Byte.
+    The length the pointer saves to is 2 Byte
+    printf("%ld", *lp) will return 25. // Not certain
+
+
+•   Wir erzeugen eine neue Variable int c = 64 und der Compiler
+    legt diese auf Adresse 28. Anschließend erzeugen wir einen
+    Zeiger int* pc = &c.
+    Spielen Sie Compiler und überlegen Sie sich eine gültige
+    Adresse für den Zeiger und füllen Sie den festgelegten
+    Speicher mit dem korrekten Wert. Gehen Sie dabei davon aus,
+    dass alle Speicherbereiche mit dem Wert 0, die bisher nicht
+    verwendet wurden, frei sind.
+
+    c:  Address 28  01000000
+    int *pc to address 10
+    &c: Address 10  00011100
+
+
+
+
+
+
+
+
+
+
+
+
+
