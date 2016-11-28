@@ -12,10 +12,17 @@
 #include <stddef.h>
 
 bool save_division(const int* x, const int* y, int* result){
-    if (*y > 0 && (&x != NULL) && (&y != NULL) && (&result != NULL)){
-        *result = *x / *y;
-        printf("True\n");
-        return true;
+    if (*y > 0 && x && y && result) { /* Checks if pointers aren't NULL */
+        if (*x >= *y){
+            *result = *x / *y;
+            printf("True\n");
+            return true;
+        }
+        else if (*y >= *x) {
+            *result = *y / *x;
+            printf("True\n");
+            return true;
+        }
     }
     printf("False\n");
     return false;
@@ -27,10 +34,11 @@ int main() {
     int result = 0;
     
     save_division(&a, &b, &result);
-    printf("%d\n", result);
+    printf("= %d\n", result);
+    
     
     /* Constant values do not change after first declaration,
-     * this probably makes sure that pointers don't change 
+     * this probably makes sure that pointers don't change
      * during function execution 
      */
     
