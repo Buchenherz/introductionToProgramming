@@ -1,3 +1,11 @@
+/*
+ //  4-pfister-a2.c
+ //
+ //  http://git.io/vXWXq
+ //  Created by Clemens Pfister on 2/12/2016.
+ //  Copyright © 2016 Clemens Pfister. All rights reserved.
+ */
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>

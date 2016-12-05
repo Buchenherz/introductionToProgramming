@@ -1,39 +1,29 @@
-• Erklären Sie wie sich der Operator sizeof
-  bei Pointern und bei Arrays verhält.
+1. Erklären Sie wie sich der Operator sizeof bei Pointern und bei Arrays verhält.
+   - With arrays: sizeof(array) is size of array in bytes.
+     - 20 chars = 20  1 Byte
+   - With pointers: the amount of space the pointer itself takes up. Not the data pointed to, but the pointer itself.
+     - 32 Bit systems: 4 Byte / 64 Bit systems: 8 Byte
 
-	• With arrays: sizeof(array) is size of array in bytes.
-	• 20 chars = 20 * 1 Byte
-	• With pointers: the amount of space the pointer itself takes up. Not the data pointed to, but the pointer itself.
-		• 32 Bit systems: 4 Byte / 64 Bit systems: 8 Byte
-
-• Wieso könnte die folgende Funktion eine
-  schlechte Idee sein?
-
-  void length(int array[]) {
-	return sizeof(array) / sizeof(int); 
-}
-
-	• void function length should not return a value!
-	• you cannot write array, because you only provide a pointer, not a value. dereference
-	• sizeof always takes type of array (int in this case) this could be a problem if you change types
-
-• Ist das Ergebnis des folgenden Vergleichs
-  true oder false? Erklären Sie ihre Antwort.
-
-	int* ptr1 = 0x00;
-	char* ptr2 = 0x08;
-	ptr1 + 3 == ptr2 + 4;
-/\* FIXME \*/
- • return s true…
- • Not sure why... 
-pointer Arithmetik! 
-
-• Warum ist die folgende Funktion keine gute Idee?
-
-	int* new_int(void) { 
-	    int my_new_int = 0; 
-	    return &my_new_int; 
+2. Wieso könnte die folgende Funktion eine schlechte Idee sein?
+	void length(int array\[]) {
+		return sizeof(array) / sizeof(int);
 	}
-	• This function will always return a differnt value
-	because the address of my_new_int will change every-
-	time it is initialised.
+- void function length should not return a value!
+- You cannot write array, because you only provide a pointer, not a value. Dereference!
+- sizeof always takes type of array (int in this case) this could be a problem if you change types
+
+1. Ist das Ergebnis des folgenden Vergleichs true oder false? Erklären Sie ihre Antwort.
+int* ptr1 = 0x00;
+char* ptr2 = 0x08;
+ptr1 + 3 == ptr2 + 4;
+- return’s True
+- ptr1 + ( 3 * sizeof (int) ) = 12     // int 4 Byte, ptr1 = 0
+- ptr2 + ( 4 * sizeof(char )) = 12   // char 11 Byte, ptr2 = 8
+- pointer Arithmetik! 
+
+1. Warum ist die folgende Funktion keine gute Idee?
+int* new_int(void) { 
+    int my_new_int = 0; 
+    return &my_new_int; 
+}
+- This function will always return a different because the address of my_new_int can change (available space).
