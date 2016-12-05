@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <stdbool.h>
 
-#define CAPACITY 15
+#define CAPACITY 10
 
 void sort(int array[], int length);
 
@@ -48,10 +48,11 @@ bool list_push_back(int list[], int* length, int capacity, int value) {
 }
 
 int list_pop_back(int list[], int* length) { 
-	if (*length == 0) {
+	if (*length <= 0) {
 		printf("Error: Array is zero. Code 0\n");
+		return 0;
 	}
-	/* If length is 100, length alone would cause overflow */
+	/* length - 1 same as index */
 	int last_item = list[*length-1];
 	list[*length-1] = 0;	
 	/* Need this to be able to update value in main */
@@ -68,6 +69,8 @@ int main(void) {
 	int list[CAPACITY] = {6,1,4,5,2,23,45,3}; 
 	int length = 10;
 	
+
+	
 	while (true) {
 		printf("Choose an option from below:\n");
 		printf("/* 0: Exit, 1: Add element, 2: Remove last, 3: Show at index, 4: Print list, 5: Sort */\n");
@@ -82,7 +85,6 @@ int main(void) {
 			int value = 0;
 			printf("Enter a value: "); scanf("%d", &value);
 			list_push_back(list, &length, CAPACITY, value);
-
 		} else if (option == 2) {
 			list_pop_back(list, &length);
 		} else if (option == 3) {
@@ -101,12 +103,15 @@ int main(void) {
 	return EXIT_SUCCESS;
 
 	/* TODO Testing */ 
-	list_get(list, length, 2);
-	list_get(list, length, -1);
-	printf("Original Array: "); list_print(list, length);
-	list_push_back(list, &length, CAPACITY, 44);
+	/*
+	printf("List get index 2: "); list_get(array, length, 2);
+	list_get(array, length, -1);
+	printf("Original Array: "); list_print(array, length);
+	list_push_back(array, &length, CAPACITY, 44);
 	printf("New length: %d\n", length);
-	list_pop_back(list, &length);
+	list_pop_back(array, &length);
+	return EXIT_SUCCESS;
+	*/
 }
 
 /* Welcome to Bubblesort */
@@ -126,5 +131,5 @@ void sort(int array[], int length){
 			break;
 		}
 	} 
-	printf("Sorted array: "); printf("%d", list_print(array, length));
+	printf("Sorted array: "); list_print(array, length);
 }
