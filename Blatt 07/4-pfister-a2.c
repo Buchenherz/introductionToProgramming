@@ -1,10 +1,11 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
+#include <time.h>
 
 #define CAPACITY 10
 
-/* TODO: RNG Array gen in C */
+int list_print(int array[], int length);
 
 /* TODO: Add more sort algorythms */
 
@@ -43,6 +44,10 @@ void sort(int array[], int length){
 int main(void) {
 	int array[CAPACITY] = {2,5,3,1,6,7,4,5,4,2}; 
 	int length = 10;
-	printf("Unsorted array: "); printf("%d", list_print(array, length));
+	list_print(array, length);
+	
+	printf("Unsorted array: "); list_print(array, length);
 	sort(array, length);
+	
+	return EXIT_SUCCESS;
 }

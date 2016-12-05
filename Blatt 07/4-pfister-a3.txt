@@ -1,0 +1,36 @@
+• Erklären Sie wie sich der Operator sizeof
+  bei Pointern und bei Arrays verhält.
+
+	• With arrays: sizeof(array) is size of array in bytes.
+
+	• With pointers: the amount of space the pointer itself takes up. Not the data pointed to, but the pointer itself.
+
+• Wieso könnte die folgende Funktion eine
+  schlechte Idee sein?
+
+  void length(int array[]) {
+	return sizeof(array) / sizeof(int); 
+}
+
+	• void function length should not return a value!
+	• otherwise good
+
+• Ist das Ergebnis des folgenden Vergleichs
+  true oder false? Erklären Sie ihre Antwort.
+
+  	int* ptr1 = 0x00; 
+  	char* ptr2 = 0x08; 
+  	ptr1 + 3 == ptr2 + 4;
+/* FIXME */
+ • return s false
+ • Not sure why... 
+
+• Warum ist die folgende Funktion keine gute Idee?
+
+	int* new_int(void) { 
+		int my_new_int = 0; 
+		return &my_new_int; 
+	}
+	• This function will always return a differnt value
+	because the address of my_new_int will change every-
+	time it is initialised.
