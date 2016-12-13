@@ -5,12 +5,16 @@
      - 32 Bit systems: 4 Byte / 64 Bit systems: 8 Byte
 
 2. Wieso könnte die folgende Funktion eine schlechte Idee sein?
-	void length(int array\[]) {
-		return sizeof(array) / sizeof(int);
-	}
+    void length(int array\[]) {
+        return sizeof(array) / sizeof(int);
+    }
 - void function length should not return a value!
 - You cannot write array, because you only provide a pointer, not a value. Dereference!
 - sizeof always takes type of array (int in this case) this could be a problem if you change types
+- sizeof(int, char, etc.) return’s the space used for the variable (int = 4, char = 1, etc.)
+- sizeof(int[10]) = sizeof(int) * 10
+- so this function will always return the same value because no matter what array you pass, it will 
+  take the size of int.
 
 1. Ist das Ergebnis des folgenden Vergleichs true oder false? Erklären Sie ihre Antwort.
 int* ptr1 = 0x00;
