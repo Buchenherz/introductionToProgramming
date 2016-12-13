@@ -4,7 +4,13 @@
 #define MAX_ELEM_COUNT 10
 
 /* Predefining this because I can */
-int arithmetic(int arr[], int length, int n, int operation);
+
+enum operations{
+	ADDITION = 0,
+	MULTIPLICATION
+};
+
+int arithmetic(int arr[], int length, int n, enum operations operation);
 
 /* Simple list print */
 void list_print(int array[]) { 
@@ -19,11 +25,7 @@ void list_print(int array[]) {
 }
 
 int main(void) {
-	
-	enum operations{
-		ADDITION = 0,
-		MULTIPLICATION
-	};
+
 
 	/* Fill array with numbers from 0 to MAX - 1 */	
 	int array[MAX_ELEM_COUNT] = {};
@@ -40,7 +42,7 @@ int main(void) {
 	return EXIT_SUCCESS;
 }
 
-int arithmetic(int arr[], int length, int n, int operation){
+int arithmetic(int arr[], int length, int n, enum operations operation){
 	int sum = 0;
 	int mul = 1;
 	
