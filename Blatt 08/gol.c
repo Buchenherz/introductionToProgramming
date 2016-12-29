@@ -54,8 +54,8 @@ void step(int height, int width, int current[height][width], int next[height][wi
 	initialize_empty(width, height, next);
 	do {
 		// spaghetti fix
-		cell_nr[height*width-1].x = width-1;
-		cell_nr[height*width-1].y = height-1;
+		//cell_nr[height*width-1].x = width-1;
+		//cell_nr[height*width-1].y = height-1;
 		// Dead or alive extreme counter
 		int dead = 0, alive = 0;
 		int x = cell_nr[cellcount].x;
@@ -113,7 +113,7 @@ void step(int height, int width, int current[height][width], int next[height][wi
 
 
 
-cell fill_array(int percentage, int height, int width, int array[height][width], cell cell_nr[height*width-1]){
+void fill_array(int percentage, int height, int width, int array[height][width], cell cell_nr[height*width-1]){
 	int counter = 0;
 	do {
 		for (int i = 0; i < height; i++) {
@@ -131,7 +131,6 @@ cell fill_array(int percentage, int height, int width, int array[height][width],
 			}
 		}
 	} while (counter < (height*width));
-	return *cell_nr;
 }
 
 
@@ -141,10 +140,10 @@ int main(int argc, const char *argv[]){
 		printf("Usage: ./gol <width> <height> <fill-rate> <steps>");
 		return EXIT_FAILURE;
 	}
-	int width = atoi(argv[1]);
-	int height = atoi(argv[2]);
+	const int width = atoi(argv[1]);
+	const int height = atoi(argv[2]);
 	int percentage = atoi(argv[3]);
-	// int steps = atoi(argv[4]);
+	int steps = atoi(argv[4]);
 	
 	// height / width really should be width / height imo 
 	int current[height][width];
@@ -153,15 +152,12 @@ int main(int argc, const char *argv[]){
 	
 	
 	fill_array(percentage, height, width, current, cell_nr);
-	print_matrix(height, width, current);
-
-	step(height, width, current, next, cell_nr);
-	
-	print_matrix(height, width, current);
-	step(height, width, current, next, cell_nr);
-	print_matrix(height, width, current);
-	
-	// write_pbm("frame1.pbm", width, height, current);
+	write_pbm("frame1.pbm", width, height, current);
+	for (int i = 0;i < steps;i++) {
+		step(height, width, current, next, cell_nr);
+		print_matrix(height, width, current);
+		write_pbm("frame.pbm", width, height, current);
+	}
 	
 	return EXIT_SUCCESS;
 }
