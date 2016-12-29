@@ -11,7 +11,7 @@ typedef struct {
 } cell;
 
 void write_pbm(const char* filepath, size_t width, size_t height,
-			   const bool array[height][width]);
+			   const int array[height][width]);
 
 int rng(){
 	// Random number between 1 and 100
@@ -24,38 +24,64 @@ int rng(){
 void print_matrix(int height, int width, int a[height][width]) {
 	for (int i = 0; i < height; i++) {
 		for (int j = 0; j < width; j++)
-			printf("%2d ", a[i][j]);
+			printf("%2d ", a[j][i]);
 		printf("\n");
 	}
+	printf("\n");
+}
+
+
+int initialize_empty(int width, int height, int next[height][width]){
+	for (int i = 0; i < height; i++) {
+		for (int j = 0; j < width; j++)
+			next[j][i] = 0;
+	}
+	return **next;
+}
+
+int clone_array(int width, int height, int source[height][width], int clone[height][width]){
+	for (int i = 0; i < height; i++) {
+		for (int j = 0; j < width; j++)
+			clone[j][i] = source[j][i];
+	}
+	return **clone;
 }
 
 
 void step(int height, int width, int current[height][width], int next[height][width], cell cell_nr[height*width-1]){
-	for (int i = 0; i < height*width; i++) {
+	int cellcount = 0;
+	// printf("%d: %2d %2d \n", 8, cell_nr[8].x, cell_nr[8].y);
+	initialize_empty(width, height, next);
+	do {
+		// spaghetti fix
+		cell_nr[height*width-1].x = width-1;
+		cell_nr[height*width-1].y = height-1;
 		// Dead or alive extreme counter
 		int dead = 0, alive = 0;
-		int x = cell_nr[i].x;
-		int y = cell_nr[i].y;
-		
-		// Second x
-		// Let's fill these counters
-		for (int k = -1; k <= 1; k++) {
-			// Second y
-			for (int j = -1; j <= 1; j++) {
-				if (j == 0 && k == 0) {
+		int x = cell_nr[cellcount].x;
+		int y = cell_nr[cellcount].y;
+		//printf("%d: %2d %2d \n", cellcount, cell_nr[cellcount].x, cell_nr[cellcount].y);
+		cellcount += 1;
+		// Second x (searchX)
+ 		// Let's fill these counters
+		for (int sx = -1; sx <= 1; sx++) {
+			// Second y (searchY)
+			for (int sy = -1; sy <= 1; sy++) {
+				// We want to skip the current cell
+				if (sx == 0 && sy == 0) {
 					continue;
 				// Check if index is out of bounce
-				} else if ((x+k) < 0 || (y+j) < 0 || (x+k) >= height || (y+j) >= width) {
+				} else if (((x+sx) < 0) || ((y+sy) < 0) || (x+sx) >= width || (y+sy) >= height) {
 					dead += 1;
 					continue;
-				} else if (current[x+k][y+j] == true){
+				} else if (current[x+sx][y+sy] == true){
 					alive += 1;
-				} else if (current[x+k][y+j] == false){
+				} else if (current[x+sx][y+sy] == false){
 					dead += 1;
 				}
 			}
 		}
-		printf("alive: %d, dead: %d\n", alive, dead);
+		//printf("alive: %d, dead: %d\n", alive, dead);
 		// Do own function
 		// If current cell is dead
 		if (current[x][y] == false) {
@@ -77,9 +103,9 @@ void step(int height, int width, int current[height][width], int next[height][wi
 			}
 		}
 		
-
-	}
-	print_matrix(height, width, next);
+	} while (cellcount < height*width);
+	write_pbm("frame*.pbm", width, height, current);
+	clone_array(width, height, next, current);
 }
 
 
@@ -89,24 +115,25 @@ void step(int height, int width, int current[height][width], int next[height][wi
 
 cell fill_array(int percentage, int height, int width, int array[height][width], cell cell_nr[height*width-1]){
 	int counter = 0;
-	while (counter < (height*width)) {
+	do {
 		for (int i = 0; i < height; i++) {
-			for (int j = 0;j < width; j++) {
+			for (int j = 0; j < width; j++) {
 				int random_number = 0;
 				random_number = rng();
 				if (random_number <= percentage) {
-					cell_nr[counter] = (cell){i, j, false};
-					array[i][j] = true;
+					cell_nr[counter] = (cell){j, i, false};
+					array[j][i] = true;
 				} else {
-					cell_nr[counter] = (cell){i, j, true};
-					array[i][j] = false;
+					cell_nr[counter] = (cell){j, i, true};
+					array[j][i] = false;
 				}
 				counter += 1;
 			}
 		}
-	}
+	} while (counter < (height*width));
 	return *cell_nr;
 }
+
 
 int main(int argc, const char *argv[]){
 	// Needs to be 5 because ./gol counts as one argument
@@ -122,14 +149,18 @@ int main(int argc, const char *argv[]){
 	// height / width really should be width / height imo 
 	int current[height][width];
 	int next[height][width];
-	
 	cell cell_nr[width*height-1];
 	
-	fill_array(0, height, width, next, cell_nr);
+	
 	fill_array(percentage, height, width, current, cell_nr);
 	print_matrix(height, width, current);
-	printf("\n%d\n", cell_nr[1].y);
+
 	step(height, width, current, next, cell_nr);
+	
+	print_matrix(height, width, current);
+	step(height, width, current, next, cell_nr);
+	print_matrix(height, width, current);
+	
 	// write_pbm("frame1.pbm", width, height, current);
 	
 	return EXIT_SUCCESS;
@@ -138,7 +169,7 @@ int main(int argc, const char *argv[]){
 
 
 void write_pbm(const char* filepath, size_t width, size_t height,
-			   const bool array[height][width]) {
+			   const int array[height][width]) {
 	
 	assert(filepath != NULL);
 	assert(array != NULL);
