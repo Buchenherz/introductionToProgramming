@@ -5,8 +5,10 @@
 #include <stdlib.h>
 
 typedef struct {
+	int x;
+	int y;
 	bool dead;
-} status;
+} cell;
 
 void write_pbm(const char* filepath, size_t width, size_t height,
 			   const bool array[height][width]);
@@ -19,8 +21,6 @@ int rng(){
 	return n;
 }
 
-void fill_array(int percentage, int height, int width, int array[height][width]);
-
 void print_matrix(int height, int width, int a[height][width]) {
 	for (int i = 0; i < height; i++) {
 		for (int j = 0; j < width; j++)
@@ -29,31 +29,83 @@ void print_matrix(int height, int width, int a[height][width]) {
 	}
 }
 
-void step(int height, int width, int current[height][width], int next[height][width]){
-	int living = 0, dead = 0;
-	for (int i = 0; i < height; i++) {
-		for (int j = 0; j < width; j++) {
-			for (int m = -1; m <= 1; m++) {
-				for (int n = -1; n <= 1; n++){
-					if (m == n) {
-						continue;
-					}
-					else if (current[i+m][j+n] != true && current[i+m][j+n] != false){
+
+void step(int height, int width, int current[height][width], int next[height][width], cell cell_nr[height*width-1]){
+	for (int i = 0; i < height*width; i++) {
+		// Dead or alive extreme counter
+		int dead = 0, alive = 0;
+		int x = cell_nr[i].x;
+		int y = cell_nr[i].y;
+		
+		// Second x
+		// Let's fill these counters
+		for (int k = -1; k <= 1; k++) {
+			// Second y
+			for (int j = -1; j <= 1; j++) {
+				if (j == 0 && k == 0) {
+					continue;
+				// Check if index is out of bounce
+				} else if ((x+k) < 0 || (y+j) < 0 || (x+k) >= height || (y+j) >= width) {
 					dead += 1;
 					continue;
-					printf("%d", current[i+m][j+n]);
-					}
-					else if (current[i+m][j+n] == true) {
-						living += 1;
-					}
-					else if (current[i+m][j+n] == false) {
-						dead += 1;
-					}
+				} else if (current[x+k][y+j] == true){
+					alive += 1;
+				} else if (current[x+k][y+j] == false){
+					dead += 1;
 				}
 			}
 		}
+		printf("alive: %d, dead: %d\n", alive, dead);
+		// Do own function
+		// If current cell is dead
+		if (current[x][y] == false) {
+			if (alive == 3) {
+				// you need to do a function for setting x / y / deadth props
+				next[x][y] = true;
+			} else {
+				next[x][y] = false;
+			}
+		}
+		// If current cell is alive 
+		else if (current[x][y] == true) {
+			if (alive <= 1) {
+				next[x][y] = false;
+			} else if ((alive == 2) || (alive == 3)) {
+				next[x][y] = true;
+			} else if (alive >= 3) {
+				next[x][y] = false;
+			}
+		}
+		
+
 	}
-	printf("dead: %d, living: %d", dead, living);
+	print_matrix(height, width, next);
+}
+
+
+
+
+
+
+cell fill_array(int percentage, int height, int width, int array[height][width], cell cell_nr[height*width-1]){
+	int counter = 0;
+	while (counter < (height*width)) {
+		for (int i = 0; i < height; i++) {
+			for (int j = 0;j < width; j++) {
+				int random_number = 0;
+				random_number = rng();
+				if (random_number <= percentage) {
+					cell_nr[counter] = (cell){i, j, false};
+					array[i][j] = true;
+				} else {
+					cell_nr[counter] = (cell){i, j, true};
+					array[i][j] = false;
+				}
+				counter += 1;
+			}
+		}
+	}
+	return *cell_nr;
 }
 
 int main(int argc, const char *argv[]){
@@ -67,30 +119,23 @@ int main(int argc, const char *argv[]){
 	int percentage = atoi(argv[3]);
 	// int steps = atoi(argv[4]);
 	
+	// height / width really should be width / height imo 
 	int current[height][width];
 	int next[height][width];
 	
-	fill_array(percentage, height, width, current);
+	cell cell_nr[width*height-1];
+	
+	fill_array(0, height, width, next, cell_nr);
+	fill_array(percentage, height, width, current, cell_nr);
 	print_matrix(height, width, current);
-	step(height, width, current, next);
+	printf("\n%d\n", cell_nr[1].y);
+	step(height, width, current, next, cell_nr);
 	// write_pbm("frame1.pbm", width, height, current);
 	
 	return EXIT_SUCCESS;
 }
 
-void fill_array(int percentage, int height, int width, int array[height][width]){
-	for (int i = 0; i < height; i++) {
-		for (int j = 0;j < width; j++) {
-			int random_number = 0;
-			random_number = rng();
-			if (random_number <= percentage) {
-				array[i][j] = true;
-			} else {
-				array[i][j] = false;
-			}
-		}
-	}
-}
+
 
 void write_pbm(const char* filepath, size_t width, size_t height,
 			   const bool array[height][width]) {
