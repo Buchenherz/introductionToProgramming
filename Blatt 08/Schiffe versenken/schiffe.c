@@ -17,6 +17,7 @@ typedef struct{
 	int length;
 	int health;
 	int nr;
+	bool placed;
 	bool alive;
 } ship; 
 
@@ -35,7 +36,7 @@ int set_random_start_y(void);
 
 void print_battlefield(int battlefield[WIDTH][HEIGHT]);
 
-ship create_ship(orientation orientation, int start_x, int start_y, int length, int health, bool alive);
+void update_ship(ship *_ship, orientation orientation, int start_x, int start_y, int length, int health, int nr, bool placed, bool alive);
 
 void set_ship(ship *_ship, int battlefield[WIDTH][HEIGHT]);
 
@@ -50,23 +51,51 @@ int main(int argc, char *argv[]) {
 	
 	
 	/* While there may be better ways to do this, 
-	 * it might help for debugging later on */
+	 * it might help for debugging later on 
+	 * Just default values btw. */
 	ship ship_array[10] = {
-		{get_random_orientation(), set_random_start_x(), set_random_start_y(), 5, 5, 0, true},
-		{get_random_orientation(), set_random_start_x(), set_random_start_y(), 4, 4, 1, true}, 
-		{get_random_orientation(), set_random_start_x(), set_random_start_y(), 4, 4, 2, true},
-		{get_random_orientation(), set_random_start_x(), set_random_start_y(), 3, 3, 3, true},
-		{get_random_orientation(), set_random_start_x(), set_random_start_y(), 3, 3, 4, true},
-		{get_random_orientation(), set_random_start_x(), set_random_start_y(), 3, 3, 5, true},
-		{get_random_orientation(), set_random_start_x(), set_random_start_y(), 2, 2, 6, true},
-		{get_random_orientation(), set_random_start_x(), set_random_start_y(), 2, 2, 7, true},
-		{get_random_orientation(), set_random_start_x(), set_random_start_y(), 2, 2, 8, true},
-		{get_random_orientation(), set_random_start_x(), set_random_start_y(), 2, 2, 9, true}	
+		{horizontal, 0, 0, 5, 5, 0, false, true},
+		{horizontal, 0, 0, 4, 4, 1, false, true}, 
+		{horizontal, 0, 0, 4, 4, 2, false, true},
+		{horizontal, 0, 0, 3, 3, 3, false, true},
+		{horizontal, 0, 0, 3, 3, 4, false, true},
+		{horizontal, 0, 0, 3, 3, 5, false, true},
+		{horizontal, 0, 0, 2, 2, 6, false, true},
+		{horizontal, 0, 0, 2, 2, 7, false, true},
+		{horizontal, 0, 0, 2, 2, 8, false, true},
+		{horizontal, 0, 0, 2, 2, 9, false, true}	
 		};
 	
 	
 	for (int i = 0; i < ship_amount; i++) {
-		set_ship(&ship_array[i], battlefield);
+		// I had much trouble with runtime, so for the final two ships, i go trough the array without randomization 
+		// If the battlefield with / height is larger, this would not be neccessary
+		while (ship_array[i].placed == false) {
+			if (ship_array[i].nr < 8){
+				update_ship(&ship_array[i], get_random_orientation(), set_random_start_x(), set_random_start_y(), ship_array[i].length, ship_array[i].health, ship_array[i].nr, ship_array[i].placed, ship_array[i].alive);
+				set_ship(&ship_array[i], battlefield);
+			} else {
+				orientation fixed_orientation = get_random_orientation();
+				int y = 0;
+				int x = 0;
+				while(y < HEIGHT && ship_array[i].placed == false){
+					while(x < WIDTH && ship_array[i].placed == false) {
+						update_ship(&ship_array[i], fixed_orientation, x, y, ship_array[i].length, ship_array[i].health, ship_array[i].nr, ship_array[i].placed, ship_array[i].alive);
+						set_ship(&ship_array[i], battlefield);
+						x++;
+						if (x == WIDTH) {
+							x = 0;
+							break;
+						}
+					}
+					y++;
+					if (x == 10 && y == 10) {
+						// swap orientation if no field found
+						ship_array[i].orientation = get_random_orientation();
+					}
+				}
+			}
+		}
 	}
 	
 	print_battlefield(battlefield);
@@ -81,8 +110,15 @@ int rng(int limit){
 	return rng;
 }
 
-ship create_ship(orientation orientation, int start_x, int start_y, int length, int health, bool alive){
-	return (ship){orientation, start_x, start_y, length, health, alive};
+void update_ship(ship *_ship, orientation orientation, int start_x, int start_y, int length, int health, int nr, bool placed, bool alive){
+	_ship->orientation = orientation;
+	_ship->start_x = start_x;
+	_ship->start_y = start_y;
+	_ship->length = length;
+	_ship->health = health;
+	_ship->nr = nr;
+	_ship->placed = placed;
+	_ship->alive = alive;
 }
 
 void create_battlefield(int battlefield[WIDTH][HEIGHT]){
@@ -129,8 +165,7 @@ int set_random_start_y(void){
 
 void set_ship(ship *_ship, int battlefield[WIDTH][HEIGHT]){
 	while (true) {
-	CHECK:
-		printf("%d %d\n %u\n", _ship->start_x, _ship->start_y, _ship->orientation);
+		// printf("%d %d\n %u\n", _ship->start_x, _ship->start_y, _ship->orientation);
 		if (_ship->orientation == horizontal) {
 			// Out of bounce detection
 			if ((_ship->start_x+_ship->length) < WIDTH && (battlefield[_ship->start_x][_ship->start_y] == 0)) {
@@ -138,31 +173,23 @@ void set_ship(ship *_ship, int battlefield[WIDTH][HEIGHT]){
 					for (int buffer = -1; buffer <=1; buffer++){
 						// Nearby boat detection
 						if ((battlefield[x][_ship->start_y+buffer] != 0) || (battlefield[x+buffer][_ship->start_y] != 0)) {
-							_ship->start_x = set_random_start_x();
-							_ship->start_y = set_random_start_y();
-							_ship->orientation = get_random_orientation();
-							goto CHECK;
-						} 
+							// Need to break out of 2 for loops, so I use goto here. 
+							goto END;
+						}
 					}
 				}
-				for (int x = _ship->start_x; x < _ship->start_x+_ship->length;x++){
+				for (int x = _ship->start_x; x < _ship->start_x+_ship->length; x++){
 					battlefield[x][_ship->start_y] = _ship->length;
 				}
 			} else {
-				_ship->start_x = set_random_start_x();
-				_ship->start_y = set_random_start_y();
-				_ship->orientation = vertical;
-				continue;
+				break;
 			}
 		} else if (_ship->orientation == vertical) {
 			if ((_ship->start_y + _ship->length) < HEIGHT && (battlefield[_ship->start_x][_ship->start_y] == 0)) {
 				for (int y = _ship->start_y; y < _ship->start_y+_ship->length; y++) {
 					for (int buffer = -1; buffer <=1; buffer++){
 						if (battlefield[_ship->start_x+buffer][y] != 0 || (battlefield[_ship->start_x][y+buffer] != 0)) {
-							_ship->start_x = set_random_start_x();
-							_ship->start_y = set_random_start_y();
-							_ship->orientation = get_random_orientation();
-							goto CHECK;
+							goto END;
 						}
 					}
 				}
@@ -170,15 +197,15 @@ void set_ship(ship *_ship, int battlefield[WIDTH][HEIGHT]){
 					battlefield[_ship->start_x][y] = _ship->length;
 				}
 			} else {
-				_ship->start_x = set_random_start_x();
-				_ship->start_y = set_random_start_y();
-				_ship->orientation = horizontal;
-				continue;
+				break;
 			}
 		}
+		_ship->placed = true;
+	END:
 		break;
 	}
-	print_battlefield(battlefield);	
+	// print_battlefield(battlefield);
+	
 }
 
 
