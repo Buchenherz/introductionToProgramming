@@ -3,6 +3,7 @@
 #include <stdbool.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <stdint.h>
 
 typedef struct {
 	int x;
@@ -99,7 +100,7 @@ void step(int height, int width, int current[height][width], int next[height][wi
 		}
 		
 	} while (cellcount < height*width);
-	write_pbm("frame*.pbm", width, height, current);
+//	write_pbm("frame*.pbm", width, height, current);
 	clone_array(width, height, next, current);
 }
 
