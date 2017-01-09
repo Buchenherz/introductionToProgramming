@@ -105,23 +105,24 @@ int main(int argc, char *argv[]) {
 		}
 	}
 	
-	print_battlefield(battlefield);
+//	print_battlefield(battlefield);
 	
 	int alive_counter = 10;
 	int shoot_x = 0;
 	int shoot_y = 0;
 	
 	while (alive_counter > 0) {
-		// scanf("%d %d", &shoot_x, &shoot_y);
-		for(shoot_x; shoot_x < 10; shoot_x++){
-			for (shoot_y; shoot_y < 10; shoot_y++) {
-				shoot(ship_array, battlefield, shoot_x, shoot_y, &alive_counter);
-				print_no_cheat(battlefield);
-			}
-			shoot_y = 0;
-		}
-//		shoot(ship_array, battlefield, shoot_x, shoot_y, &alive_counter);
-//		print_no_cheat(battlefield);
+
+//		for(shoot_x; shoot_x < 10; shoot_x++){
+//			for (shoot_y; shoot_y < 10; shoot_y++) {
+//				shoot(ship_array, battlefield, shoot_x, shoot_y, &alive_counter);
+//				print_no_cheat(battlefield);
+//			}
+//			shoot_y = 0;
+//		}
+		scanf("%d %d", &shoot_x, &shoot_y);
+		shoot(ship_array, battlefield, shoot_x, shoot_y, &alive_counter);
+		print_no_cheat(battlefield);
 	}
 	
 	printf("\nCongrats, you win!\n");
