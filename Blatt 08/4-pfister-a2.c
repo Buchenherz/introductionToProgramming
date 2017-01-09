@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
+#include <time.h>
 
 #define WIDTH 10
 #define HEIGHT 10
@@ -47,6 +48,9 @@ void search_ship(ship ship_array[10], int shoot_x, int shoot_y, int *alive_count
 bool shoot(ship ship_array[10], int battlefield[WIDTH][HEIGHT], int shoot_x, int shoot_y, int *alive_counter);
 
 int main(int argc, char *argv[]) {
+	
+	// Set random seed	
+	srand(time(NULL));
 	
 	int battlefield[WIDTH][HEIGHT];
 	create_battlefield(battlefield);	
@@ -105,7 +109,7 @@ int main(int argc, char *argv[]) {
 		}
 	}
 	
-//	print_battlefield(battlefield);
+	print_battlefield(battlefield);
 	
 	int alive_counter = 10;
 	int shoot_x = 0;
@@ -133,8 +137,8 @@ int main(int argc, char *argv[]) {
 int rng(int limit){
 	// Random number between 0 and limit-1
 	// Need 0 for index later
-	int rng = arc4random_uniform(limit);
-	return rng;
+	int n = (rand() % limit) + 1;
+	return n;
 }
 
 void update_ship(ship *_ship, orientation orientation, int start_x, int start_y, int length, int health, int nr, bool placed, bool alive){

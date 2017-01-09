@@ -3,6 +3,7 @@
 #include <stdbool.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <time.h>
 
 typedef struct {
 	int x;
@@ -17,7 +18,7 @@ int rng(){
 	// Random number between 1 and 100
 	/* When two lines of code cost you half an hour...
 	 * Time changes not quickly enough */
-	int n = arc4random_uniform(100);
+	int n = (rand() % 100) + 1;
 	return n;
 }
 
@@ -139,7 +140,9 @@ int main(int argc, const char *argv[]){
 	const int height = atoi(argv[2]);
 	int percentage = atoi(argv[3]);
 	int steps = atoi(argv[4]);
-	
+
+	// Set random seed	
+	srand(time(NULL));
 	// height / width really should be width / height imo 
 	int current[height][width];
 	int next[height][width];
