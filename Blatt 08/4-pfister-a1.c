@@ -3,7 +3,6 @@
 #include <stdbool.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include <stdint.h>
 
 typedef struct {
 	int x;
@@ -18,7 +17,7 @@ int rng(){
 	// Random number between 1 and 100
 	/* When two lines of code cost you half an hour...
 	 * Time changes not quickly enough */
-	uint32_t n = arc4random_uniform(100);
+	int n = arc4random_uniform(100);
 	return n;
 }
 

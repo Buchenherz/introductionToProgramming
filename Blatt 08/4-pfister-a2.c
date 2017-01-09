@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
-#include <stdint.h>
 
 #define WIDTH 10
 #define HEIGHT 10
@@ -134,7 +133,7 @@ int main(int argc, char *argv[]) {
 int rng(int limit){
 	// Random number between 0 and limit-1
 	// Need 0 for index later
-	uint32_t rng = arc4random_uniform(limit);
+	int rng = arc4random_uniform(limit);
 	return rng;
 }
 
