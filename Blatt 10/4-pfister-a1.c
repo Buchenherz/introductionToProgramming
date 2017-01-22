@@ -3,7 +3,7 @@
 #include <stdbool.h>
 
 int *iarray(int n){
-	int *iptr = malloc(n * sizeof(*iptr));
+	int *iptr = (int*)malloc(n * sizeof(*iptr));
 	if (iptr != NULL)
 	{
 		for (int i = 0; i < n; i++)
@@ -14,9 +14,26 @@ int *iarray(int n){
 	return iptr;
 }
 
+void print_array(int* arr, int n){
+	for (int i = 0; i < n; i++)
+	{
+		printf("%d ", arr[i]);
+	}
+	printf("\n");
+}
+
+int array_sum(int* arr, int n){
+	int sum = 0;
+	for (int i = 0; i < n; i++)
+		{
+			sum += arr[i];
+		}
+	return sum;
+}
+
 int main(int argc, char const *argv[])
 {
-	int n;
+	unsigned int n;
 	printf("Please enter the number of integer itmes you want: "); scanf("%d", &n);
 	int *arr = iarray(n);
 	if (arr == NULL)
@@ -25,27 +42,18 @@ int main(int argc, char const *argv[])
 		return EXIT_FAILURE;
 	}
 
-	for (int i = 0; i < n; i++)
-	{
-		printf("arr[%d] = %d\n", i, arr[i]);
-	}
-
-	int sum = 0;
-
+	print_array(arr, n);
+	
 	// arr not free yet
-	for (int i = 0; i < n; i++)
-	{
-		sum += arr[i];
-	}
+	int sum = array_sum(arr, n);
 	printf("%d\n", sum);
-
+	
 	// freeing array
 	free(arr);
-	sum = 0;
-	for (int i = 0; i < n; i++)
-	{
-		sum += arr[i];
-	}
+
+	print_array(arr, n);
+
+	sum = array_sum(arr, n);
 	printf("%d\n", sum);
 
 	return EXIT_SUCCESS;
