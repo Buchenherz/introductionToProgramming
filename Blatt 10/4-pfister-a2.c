@@ -1,7 +1,6 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <strings.h>
-#include <stdbool.h>
 
 struct Person { 
 	char firstname[64]; 
@@ -10,23 +9,21 @@ struct Person {
 };
 
 int Person_cmp_firstname(const void* x, const void* y){
-	return strcmp(x, y);
+	struct Person *first_name_x = (*(struct Person**) x);
+	struct Person *first_name_y = (*(struct Person**) y);
+	return strcmp(first_name_x->firstname,first_name_y->firstname);
 }
 
 int Person_cmp_lastname(const void* x, const void* y ) {
-	return strcmp(x, y); 
+	struct Person *last_name_x = (*(struct Person**) x);
+	struct Person *last_name_y = (*(struct Person**) y);
+	return strcmp(last_name_x->lastname,last_name_y->lastname);
 }
 
 int Person_cmp_age(const void* x, const void* y) {
-	if (x > y) {
-		return -1;
-	}
-	else if (x < y){
-		return 1;
-	}
-	else {
-		return 0;
-	}
+	struct Person *age_x = (*(struct Person**) x);
+	struct Person *age_y = (*(struct Person**) y);
+	return age_x->age - age_y->age;
 }
 
 void input(struct Person *person_array[]){
@@ -56,6 +53,12 @@ void print_persons(struct Person *person_array[]){
     }
 }
 
+void free_them_all(struct Person *person_array[]){
+	for (int i = 0; i < 3 ; i++) {
+		free(person_array[i]);
+	}
+}
+
 int main(int argc, char const *argv[])
 {
 	// Null pointer initialisation of an array of pters
@@ -74,11 +77,12 @@ int main(int argc, char const *argv[])
 	scanf("%d", &n);
 
 	switch(n){
-		case 1: qsort(person_array, 3, sizeof(struct Person), Person_cmp_firstname); break;
-		case 2: qsort(person_array, 3, sizeof(struct Person), Person_cmp_lastname); break;
-		case 3: qsort(person_array, 3, sizeof(struct Person), Person_cmp_age); break;
+		case 1: qsort( person_array , 3 , sizeof(struct Person*), Person_cmp_firstname); break;
+		case 2: qsort( person_array , 3 , sizeof(struct Person*), Person_cmp_lastname); break;
+		case 3: qsort( person_array , 3 , sizeof(struct Person*), Person_cmp_age); break;
 		default: printf("Something went wrong...\n");
 	}
-	
+	print_persons(person_array);
+
 	return EXIT_SUCCESS;
 }
