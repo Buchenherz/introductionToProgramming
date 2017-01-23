@@ -1,6 +1,6 @@
 #include <stdlib.h>
 #include <stdio.h>
-#include <strings.h>
+#include <string.h>
 
 struct Person { 
 	char firstname[64]; 
