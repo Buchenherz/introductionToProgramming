@@ -10,6 +10,8 @@ int *iarray(int n){
 		{
 			iptr[i] = i + 1;
 		}
+	} else {
+		exit(EXIT_FAILURE);
 	}
 	return iptr;
 }
@@ -48,7 +50,7 @@ int main(int argc, char const *argv[])
 	int sum = array_sum(arr, n);
 	printf("%d\n", sum);
 	
-	// freeing array
+	// freeing array never ever touch this again (normally 😉)
 	free(arr);
 
 	print_array(arr, n);

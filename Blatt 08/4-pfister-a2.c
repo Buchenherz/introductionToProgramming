@@ -109,7 +109,7 @@ int main(int argc, char *argv[]) {
 		}
 	}
 	
-	print_battlefield(battlefield);
+//	print_battlefield(battlefield);
 	
 	int alive_counter = 10;
 	int shoot_x = 0;

@@ -1,6 +1,8 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
+// Add to upper case later maybe?
+#include <ctype.h>
 
 struct Person { 
 	char firstname[64]; 
@@ -83,6 +85,6 @@ int main(int argc, char const *argv[])
 		default: printf("Something went wrong...\n");
 	}
 	print_persons(person_array);
-
+	free_them_all(person_array);
 	return EXIT_SUCCESS;
 }
